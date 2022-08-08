@@ -30,7 +30,34 @@ def square_digits(num):
 def getCount(s):
     return sum(c in 'aeiou' for c in s) # gets the sum of the True returns for whether each letter in the inputed string (s) exists within the 'aeiou' string
 ```
-
+### Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit
+```commandline
+# Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit
+def persistence(n):
+    count = 0
+    continue_recursion = True
+    temp_1 = [str(letter) for letter in str(n)]
+    while continue_recursion:
+        temp_2.clear()
+        temp_2 = [letter for letter in temp_1]
+        temp_1 = temp_2
+        # check if result is a single digit (string length)
+        if len(temp_1) == 1:
+            break
+        else:
+            count += 1
+            # divide the n into individual single intgers (for loop array)
+            # multiply ll of the individual integers (for loop)
+            multiple = 1
+            for number in temp_1:
+                multiple *= int(number)
+            temp_1.clear()
+            temp_1 = [str(letter) for letter in str(multiple)]
+            if len(multiple) == 1:
+                continue_recursion == False
+        # add the count
+    return count
+```
 ## APIs
 ### What is an API?
 Application Programming Interface (API), a way for two or more programs to interact with oneanother. It is a type of interface, offering a service to other pieces of software.
