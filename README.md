@@ -34,30 +34,64 @@ def getCount(s):
 ```commandline
 # Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit
 def persistence(n):
-    count = 0
-    continue_recursion = True
-    temp_1 = [str(letter) for letter in str(n)]
-    while continue_recursion:
-        temp_2.clear()
-        temp_2 = [letter for letter in temp_1]
-        temp_1 = temp_2
-        # check if result is a single digit (string length)
-        if len(temp_1) == 1:
-            break
-        else:
-            count += 1
-            # divide the n into individual single intgers (for loop array)
-            # multiply ll of the individual integers (for loop)
-            multiple = 1
-            for number in temp_1:
-                multiple *= int(number)
-            temp_1.clear()
-            temp_1 = [str(letter) for letter in str(multiple)]
-            if len(multiple) == 1:
-                continue_recursion == False
-        # add the count
-    return count
+    def persistence(n):
+        count = 0
+        continue_recursion = True
+        temp_1 = [str(letter) for letter in str(n)]
+        temp_2 = []
+        while continue_recursion:
+            temp_2.clear()
+            temp_2 = [letter for letter in temp_1]
+            temp_1 = temp_2
+            # check if result is a single digit (string length)
+            if len(temp_1) == 1:
+                break
+            else:
+                count += 1
+                # divide the n into individual single intgers (for loop array)
+                # multiply ll of the individual integers (for loop)
+                multiple = 1
+                for number in temp_1:
+                    multiple *= int(number)
+                temp_1.clear()
+                temp_1 = [str(letter) for letter in str(multiple)]
+                # add the count
+        return count
 ```
+
+### What is an anagram? Well, two words are anagrams of each other if they both contain the same letters
+```commandline
+# What is an anagram? Well, two words are anagrams of each other if they both contain the same letters.
+def anagrams(word, words):
+    return [item for item in words if sorted(item)==sorted(word)] # iterates through words list, checking each "item". if it (sorted alphabetically) is the same string as the 'word' variable (sorted alphabetically), it gets added to the return string
+```
+
+### Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
+```
+# Write a function that takes an integer as input, and returns the number of bits that are equal to one in the binary representation of that number.
+# You can guarantee that input is non-negative.
+# Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
+def count_bits(n):
+    counter = 0
+    for bin in str(format(n, "b")):
+        if bin == "1":
+            counter += 1
+    return counter
+
+# better version... we love one line answers
+def count_bits(n):
+    return bin(n).count("1")
+```
+
+### Python mock exam question 9, redo
+```commandline
+# Python past exam question 9 task
+def find_smallest_interval(numbers):
+    numbers.sort()
+    return numbers[0], numbers[1]
+
+```
+
 ## APIs
 ### What is an API?
 Application Programming Interface (API), a way for two or more programs to interact with oneanother. It is a type of interface, offering a service to other pieces of software.
