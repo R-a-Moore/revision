@@ -91,7 +91,33 @@ def find_smallest_interval(numbers):
     return numbers[0], numbers[1]
 
 ```
+### bus stops at multiple stops. people get on and people get off
+```
+# bus stops at multiple stops. people get on and people get off
+# calculate the final amount of people on the bus by adding the difference of people getting on and off at each stop.
+def number(bus_stops): # function to
+    final = 0 # final number of people which will be iterated upon
+    for stop in bus_stops: # loops through each bus stop
+        final += (stop[0] - stop[1]) # minuses people getting off from people getting on, then adds difference to final amount of people on bus
+    return final
+```
+### print list of strings/integers having removed doubles in list
+```commandline
+def unique_in_order(iterable):
+    new_list = []
+    if len(iterable) != 0:
+        previous = ""
+        for i in str(iterable.split()):
+            if i != previous:
+                new_list.append(i)
+            previous = i
+        new_list.remove("'")
+        new_list.remove("'")
+        new_list.remove("]")
+        new_list.remove("[")
 
+    return new_list
+```
 ## APIs
 ### What is an API?
 Application Programming Interface (API), a way for two or more programs to interact with oneanother. It is a type of interface, offering a service to other pieces of software.
